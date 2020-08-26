@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DicodingLatihanTesting</string>
+    <string name="hasil">Hasil</string>
+    <string name="keliling">Keliling</string>
+    <string name="permukaan">Permukaan</string>
+    <string name="volume">Volume</string>
+    <string name="save">Save</string>
+    <string name="panjang">Panjang</string>
+    <string name="lebar">Lebar</string>
+    <string name="tinggi">Tinggi</string>
 </resources>
