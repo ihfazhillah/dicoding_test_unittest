@@ -56,6 +56,38 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
+    public void assertGetVolume(){
+        onView(withId(R.id.et_panjang)).perform(typeText(dummyLength), closeSoftKeyboard());
+        onView(withId(R.id.et_lebar)).perform(typeText(dummyWidth), closeSoftKeyboard());
+        onView(withId(R.id.et_tinggi)).perform(typeText(dummyHeight), closeSoftKeyboard());
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()));
+        onView(withId(R.id.btn_save)).perform(click());
+
+        onView(withId(R.id.btn_htg_volume)).check(matches(isDisplayed()));
+        onView(withId(R.id.btn_htg_volume)).perform(click());
+
+        onView(withId(R.id.tv_hasil)).check(matches(isDisplayed()));
+        onView(withId(R.id.tv_hasil)).check(matches(withText(dummyVolume)));
+    }
+
+    @Test
+    public void assertGetSurface(){
+        onView(withId(R.id.et_panjang)).perform(typeText(dummyLength), closeSoftKeyboard());
+        onView(withId(R.id.et_lebar)).perform(typeText(dummyWidth), closeSoftKeyboard());
+        onView(withId(R.id.et_tinggi)).perform(typeText(dummyHeight), closeSoftKeyboard());
+
+        onView(withId(R.id.btn_save)).check(matches(isDisplayed()));
+        onView(withId(R.id.btn_save)).perform(click());
+
+        onView(withId(R.id.btn_luas_permukaan)).check(matches(isDisplayed()));
+        onView(withId(R.id.btn_luas_permukaan)).perform(click());
+
+        onView(withId(R.id.tv_hasil)).check(matches(isDisplayed()));
+        onView(withId(R.id.tv_hasil)).check(matches(withText(dummySurfaceArea)));
+    }
+
+    @Test
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
